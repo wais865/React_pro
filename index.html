@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <title>React</title>
+</head>
+<body>
+    <div id="header"><h1>header</h1></div>
+    <div id="bodies"><h2>content</h2></div>
+    <div id="footer"><h1>footer</h1></div>
+    
+
+    <script type="text/babel">
+        const Contents = () => {
+            const title = "welcome to React Page"
+            const message = "Welcome to React its very cool to learn about React";
+            const author = () => {
+                const name = "John";
+                const age = 30;
+                const email = "john@example.com";
+                const spescification = "name :".concat(name, " age :",age, " email :",email);
+                console.log(spescification);
+                return spescification;
+            }
+            return(
+                <div>
+                    <h2>{title}</h2>
+                    <p>{message}</p>
+                    <p>your message date is : {new Date().toString()}</p>
+                    <p>random numbers {Math.round(Math.random() * 1000)}</p>
+                    <button type="button" onClick={author}>click me</button>
+                </div>
+            )
+        }
+
+        // React Dom
+        ReactDOM.render(<Contents/> , document.getElementById('bodies'));
+    </script>
+</body>
+</html>
