@@ -37,8 +37,12 @@
             )
         }
 
-        // React Dom
-        ReactDOM.render(<Contents/> , document.getElementById('bodies'));
+        // React Dom syntax in React 17
+        // ReactDOM.render(<Contents/> , document.getElementById('bodies'));
+
+        // React Dom syntax in React 18
+        const root = ReactDOM.createRoot(document.getElementById('bodies'));
+        root.render(<Contents/>);
     </script>
 </body>
 </html>
